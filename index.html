@@ -34,11 +34,15 @@
     // Prevent page from reloading, which is default behavior for forms
     e.preventDefault();
 
+    const itemName = document.querySelector( '[name = "item" ]' ).value;
+    console.log(itemName);
+    
+
     const item = {
-      text: 'Item Name',
+      name: 'Item Name',
       done: false
     };
-    
+
   }
 
   addItems.addEventListener( 'submit', addItem );
