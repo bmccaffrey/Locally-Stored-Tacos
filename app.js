@@ -1,6 +1,6 @@
 const addItems = document.querySelector('.add-items');
 const itemsList = document.querySelector('.plates');
-const items = [];
+const items = JSON.parse( localStorage.getItem( 'items' ) ) || [];
 // TODO: Rename--too similiar to addItems
 function addItem( e ) {
   // Prevent page from reloading, which is default behavior for forms
@@ -35,3 +35,5 @@ function populateList( plates = [], platesList ) {
 }               // string, not an array of strings
 
 addItems.addEventListener( 'submit', addItem );
+
+populateList( items, itemsList );
