@@ -16,6 +16,7 @@ function addItem( e ) {
   // TODO: Rename--identifiers too similiar
   items.push( item );
   populateList( items, itemsList );
+  localStorage.setItem( 'items', JSON.stringify( items ) );
   // Reset input field after submission
   addItems.reset();
 }
