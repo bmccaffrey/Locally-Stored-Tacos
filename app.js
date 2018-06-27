@@ -20,12 +20,14 @@ function addItem( e ) {
   addItems.reset();
 }
 
-// Create list of all objects
+// Create list of all objects; could just append new <li> instead of re-writing
+// the whole thing each time
 function populateList( plates = [], platesList ) {
   platesList.innerHTML = plates.map( ( plate, i ) => {
     return `
       <li>
-        <label for="">${ plate.itemName }</label>
+         <input type="checkbox" data-index=${ i } id="item${ i }">
+        <label for="item${ i }">${ plate.itemName }</label>
       </li>
     `;
   }).join(''); // .map returns a new array; desired return value is long
